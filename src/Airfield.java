@@ -1,11 +1,6 @@
 
 public class Airfield {
 
-//	String customizedPrice = " "; 
-//	double custSpeed = 0.0; 
-//	int custRange = 0; 
-//	long custPrice = 0; 
-	
 	private Jet[] jets = new Jet[20]; 
 	
 	private void populateAirfield() {
@@ -22,22 +17,15 @@ public class Airfield {
 		populateAirfield(); 
 	}
 	
-	public void addJetToAirfield(JetImpl newJet) {
+	public void addJetToAirfield(Jet ji) {
+		
 		for (int i = 0; i < jets.length; i++) {
 			if (jets[i] == null) {
-				jets[i] = newJet; 
+				jets[i] = ji; 
 				break; 
 			}
 		}
 	}
-	
-//	private int currentJetIndex = 0;
-//		if(currentJetIndex == jets.length) {
-//		      System.out.println("There is no more room");
-//		      return;
-//		    }
-//		    jets[currentJetIndex] = ji;
-//		    currentJetIndex++;
 	
 	public void listFleet() {
 		for (int i = 0; i < jets.length; i++) {

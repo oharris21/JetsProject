@@ -5,7 +5,6 @@ public class JetsApplication {
 	Airfield airfield = new Airfield(); 
 	FighterJet fj = new FighterJet("-", 1, 1, 1); 
 	CargoPlane cp = new CargoPlane("---", 1, 1, 1); 
-	JetImpl ji = new JetImpl("--", 1, 1, 1); 
 	
 	private Scanner sc = new Scanner(System.in); 
 	
@@ -72,7 +71,7 @@ public class JetsApplication {
 			displayUserMenu();
 		}
 		if (menuChoice == 8) {
-			// airfield.addJetToAirfield(ji);
+			 addJet();
 			displayUserMenu();
 		}
 		if (menuChoice == 9) {
@@ -80,5 +79,31 @@ public class JetsApplication {
 			System.exit(0); 
 		}
 	}
+	
+	public void addJet() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Welcome to the hanger. Here, you can customize your own jet and be in the air in no time!");
+
+		System.out.print("What's the model? ");
+		String custModel = sc.nextLine();
+
+		System.out.print("What's it's top speed (in MPH)? ");
+		String customizedSpeed = sc.next();
+		double custSpeed = Double.parseDouble(customizedSpeed);
+
+		System.out.print("How about is it's range? ");
+		String customizedRange = sc.next();
+		int custRange = Integer.parseInt(customizedRange);
+
+		System.out.print("And lastly, how much does it cost? ");
+		String customizedPrice = sc.next();
+		long custPrice = Long.parseLong(customizedPrice);
+		
+		Jet ji = new JetImpl(custModel, custSpeed, custRange, custPrice);
+		
+		airfield.addJetToAirfield(ji);
+	}
+	
 	
 }
