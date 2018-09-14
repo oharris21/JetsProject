@@ -1,12 +1,16 @@
 
 public class FighterJet extends Jet implements CombatReady {
 	
-	public FighterJet(String model, double speed, int range, long price) {
-		super(model, speed, range, price); 
+	public FighterJet() {
+		
+	}
+	
+	public FighterJet(String model, double speed, int range, long price, Pilot pilot) {
+		super(model, speed, range, price, pilot); 
 	}
 	
 	public void fight() {
-		System.out.println("'Merica");
+		System.out.println("The fighter jets are preparing to fight!\n");
 	}
 	
 }
